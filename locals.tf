@@ -26,7 +26,7 @@ locals {
 		"35.235.240.0/20"
 	]
 	InstanceId = var.InstanceId
-	Preamble = replace("${local.UserLoginTag}-${local.UserProjectTag}-${local.Tag}-${local.Version}-${local.InstanceId}", "_", "-")
+	Preamble = replace(replace("${local.UserLoginTag}-${local.UserProjectTag}-${local.Tag}-${local.Version}-${local.InstanceId}", "_", "-"), ".", "-")
 	PrivateVpcNetworkName = "${local.Preamble}-private-vpc-network"
 	PrivateVpcNetworkMtu = var.PrivateVpcNetworkMtu
 	PrivateSubnetName = "${local.Preamble}-private-subnet"
