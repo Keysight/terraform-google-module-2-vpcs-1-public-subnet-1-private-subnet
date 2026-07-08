@@ -64,3 +64,26 @@ locals {
 	UserProjectTag = var.UserProjectTag
 	Version = var.Version
 }
+
+locals {
+	PrivateSubnet = {
+		name = google_compute_subnetwork.PrivateSubnet.name
+		self_link = google_compute_subnetwork.PrivateSubnet.self_link
+	}
+	PrivateVpcNetwork = {
+		id = google_compute_network.PrivateVpcNetwork.id
+		mtu = google_compute_network.PrivateVpcNetwork.mtu
+		name = google_compute_network.PrivateVpcNetwork.name
+		self_link = google_compute_network.PrivateVpcNetwork.self_link
+	}
+	PublicSubnet = {
+		name = google_compute_subnetwork.PublicSubnet.name
+		self_link = google_compute_subnetwork.PublicSubnet.self_link
+	}
+	PublicVpcNetwork = {
+		id = google_compute_network.PublicVpcNetwork.id
+		mtu = google_compute_network.PublicVpcNetwork.mtu
+		name = google_compute_network.PublicVpcNetwork.name
+		self_link = google_compute_network.PublicVpcNetwork.self_link
+	}
+}
